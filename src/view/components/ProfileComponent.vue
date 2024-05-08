@@ -1,17 +1,18 @@
 <template>
-    <div class="justify-center">
+    <div class="q-ma-md">
         <div class="row justify-center">
             <div></div>
             <div class="text-center q-mt-xl">
                 <q-avatar 
                 size="100px"
                 rounded
+                class=""
                 >
                     <img src="https://cdn.quasar.dev/img/avatar4.jpg">
                 </q-avatar>
-                <div class="q-mt-md">{{personalInfo.name}}</div>
+                <div class="q-mt-md text-h6">{{personalInfo.name}}</div>
                 <div class="column">
-                    <q-badge class="q-mt-md  text-subtitle2 justify-center" color="grey-9">{{ personalInfo.role }}</q-badge>
+                    <q-badge class="q-mt-md text-subtitle2 justify-center" color="grey-9">{{ personalInfo.role }}</q-badge>
                     <div>
                         <q-badge class="q-mt-sm q-mx-sm justify-center text-subtitle" color="blue-8">{{ personalInfo.tech }}</q-badge>
                         <q-badge class="q-mt-sm q-mx-sm justify-center text-subtitle" color="green-8">{{ personalInfo.tech_2 }}</q-badge>
@@ -23,23 +24,25 @@
         </div>
             
         
-        <q-separator color="grey-9" class="q-mt-md"/>
+        <q-separator color="grey-9" class="text-center q-mt-md q-mx-md"/>
         <div class="q-mt-md">
             <div 
                 v-for="items in personalList" 
                 v-bind:key="items.id"
-                class="row items-center"
+                class="row items-center q-mt-md"
             >
-                <q-card class="bg-grey-10 q-ma-md q-pa-md">
-                    <q-icon :name="items.icon"/>
+                <q-card class="bg-grey-10  text-center">
+                    <q-icon class="q-ma-sm" size="md" color="primary" :name="`${items.icon}`"/>
                 </q-card>
-                <div>
-                    <div>{{ items.title }}</div>
+                
+                
+                <div class="q-ml-md">
+                    <div class="text-grey-6">{{ items.title }}</div>
                     <div>{{ items.data }}</div>
                 </div>
             </div>
             
-            <div>socials</div>
+            <div class="q-mt-md">socials</div>
         </div>
     </div>
     
@@ -60,27 +63,27 @@ const personalInfo = {
 const personalList = [
     {
         id: 1,
-        title: 'email',
+        title: 'EMAIL',
         data: 'email@mail.com',
-        icon: 'fa-email',
+        icon: 'mail_outline',
     },
     {
         id: 2,
-        title: 'phone',
+        title: 'PHONE',
         data: '+55 (31) 9 1234-5678',
-        icon: 'fa-phone',
+        icon: 'o_phone',
     },
     {
         id: 3,
-        title: 'birthday',
+        title: 'BIRTHDAY',
         data: '12/12/1212',
-        icon: 'fa-event',
+        icon: 'o_event',
     },
     {
         id: 4,
-        title: 'location',
+        title: 'LOCATION',
         data: 'Brazil, MG',
-        icon: 'fa-location-dot',
+        icon: 'o_place',
     },
 ]
 
