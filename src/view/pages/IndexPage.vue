@@ -47,3 +47,4 @@ export default defineComponent({
   }
 });
 </script>
+src/view/components/models
