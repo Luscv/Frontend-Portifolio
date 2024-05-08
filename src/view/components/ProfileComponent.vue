@@ -31,7 +31,14 @@
                 v-bind:key="items.id"
                 class="row items-center q-mt-md"
             >
-                <q-card class="bg-grey-10  text-center">
+                <q-card 
+                    class="bg-grey-10  text-center"
+                    style=" 
+                        border-image: linear-gradient(-45deg, #1e1e1f 50%, #616161) 15;
+                        border-width: 1px;
+                        border-style: solid;
+                    "
+                >
                     <q-icon class="q-ma-sm" size="md" color="primary" :name="`${items.icon}`"/>
                 </q-card>
                 
@@ -42,7 +49,7 @@
                 </div>
             </div>
             
-            <div class="q-mt-md">socials</div>
+            <div class="q-mt-xl q-mb-xl text-center">socials</div>
         </div>
     </div>
     
