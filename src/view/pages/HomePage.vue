@@ -16,8 +16,24 @@
         <q-tab name="Contact" label="Contact" />
       </q-tabs>
     </div>
-    <div></div>
-    <div></div>
+      <q-tab-panels class="bg-grey-10" v-model="tab" animated>
+          <q-tab-panel name="About">
+              <div class="text-h6">About</div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </q-tab-panel>
+          <q-tab-panel name="Resume">
+              <div class="text-h6">Resume</div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </q-tab-panel>
+          <q-tab-panel name="Portifolio">
+              <div class="text-h6">Portifolio</div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </q-tab-panel>
+          <q-tab-panel name="Contact">
+              <div class="text-h6">Contact</div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </q-tab-panel>
+      </q-tab-panels>
     <div></div>
 
   </q-page>
