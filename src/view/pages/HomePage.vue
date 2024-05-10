@@ -10,7 +10,7 @@
         class="bg-grey-9 q-py-sm q-px-xl"
         style="width: max-content; border-bottom-left-radius: 40px;"
       >
-        <q-tab name="About" label="About" />
+        <q-tab name="About" label="About"/>
         <q-tab name="Resume" label="Resume" />
         <q-tab name="Portifolio" label="Portifolio" />
         <q-tab name="Contact" label="Contact" />
@@ -18,20 +18,16 @@
     </div>
       <q-tab-panels class="bg-grey-10" v-model="tab" animated>
           <q-tab-panel name="About">
-              <div class="text-h6">About</div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <AboutTab/>
           </q-tab-panel>
           <q-tab-panel name="Resume">
-              <div class="text-h6">Resume</div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <ResumeTab/>
           </q-tab-panel>
           <q-tab-panel name="Portifolio">
-              <div class="text-h6">Portifolio</div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <PortifolioTab/>
           </q-tab-panel>
           <q-tab-panel name="Contact">
-              <div class="text-h6">Contact</div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <ContactTab/>
           </q-tab-panel>
       </q-tab-panels>
     <div></div>
@@ -41,6 +37,11 @@
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
+import AboutTab from '../components/AboutTab.vue';
+import ResumeTab from '../components/ResumeTab.vue';
+import PortifolioTab from '../components/PortifolioTab.vue';
+import ContactTab from '../components/ContactTab.vue';
+
 
 const tab = ref('About')
 </script>
