@@ -59,6 +59,7 @@
             
             <div class="q-mt-xl q-mb-xl text-center">
                 <a 
+                    target="_blank"
                     href="https://github.com/Luscv"
                     style="
                         text-decoration: none;
@@ -70,6 +71,7 @@
                 </a>
                 <span style="color: #9e9e9e;">●</span>
                 <a 
+                    target="_blank"
                     href="https://www.linkedin.com/in/luscv/"
                     style="
                         text-decoration: none;
