@@ -1,6 +1,6 @@
 <template>
-  <div class="q-mx-md">
-    <q-timeline color="primary" layout="loose">
+  <div class="q-mx-xl">
+    <q-timeline color="primary" layout="comfortable">
       <q-timeline-entry tag="h4" heading>
         Experience
       </q-timeline-entry>
@@ -18,7 +18,7 @@
       >
       </q-timeline-entry>
     </q-timeline>
-    <q-timeline color="primary" layout="loose" class="q-mt-md">
+    <q-timeline color="primary" layout="comfortable" class="q-mt-md">
       <q-timeline-entry tag="h4" heading>
         Education
       </q-timeline-entry>
