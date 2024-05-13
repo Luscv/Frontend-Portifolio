@@ -31,16 +31,24 @@
                 v-bind:key="items.id"
                 class="row items-center q-mt-md"
             >
-                <q-card 
-                    class="bg-grey-10  text-center"
-                    style=" 
-                        border-image: linear-gradient(-45deg, #1e1e1f 50%, #616161) 15;
-                        border-width: 1px;
-                        border-style: solid;
+                <div
+                    style="
+                        background: rgb(97,97,97);
+                        background: linear-gradient(135deg, rgba(97,97,97,1) 0%, rgba(33,33,33,1) 60%);border-radius: 4px;
+                        padding: 1px;
+                        border-radius: 8px;
                     "
                 >
-                    <q-icon class="q-ma-sm" size="md" color="primary" :name="`${items.icon}`"/>
-                </q-card>
+                    <q-card 
+                        class="bg-grey-10  text-center"
+                        style=" 
+                            border-radius: 8px;
+                        "
+                    >
+                        <q-icon class="q-ma-sm" size="md" color="primary" :name="`${items.icon}`"/>
+                    </q-card>  
+                </div>
+                
                 
                 
                 <div class="q-ml-md">
@@ -49,7 +57,29 @@
                 </div>
             </div>
             
-            <div class="q-mt-xl q-mb-xl text-center">socials</div>
+            <div class="q-mt-xl q-mb-xl text-center">
+                <a 
+                    href="https://github.com/Luscv"
+                    style="
+                        text-decoration: none;
+                        color: #9e9e9e;
+                        margin-right: 5px;
+                    "
+                >
+                    {{ personalInfo.socials[0].site }}
+                </a>
+                <span style="color: #9e9e9e;">●</span>
+                <a 
+                    href="https://www.linkedin.com/in/luscv/"
+                    style="
+                        text-decoration: none;
+                        color: #9e9e9e;
+                        margin-left: 5px;
+                    "
+                >
+                    {{ personalInfo.socials[1].site }}
+                </a>
+            </div>
         </div>
     </div>
     
@@ -65,6 +95,16 @@ const personalInfo = {
     city: 'Belo Horizonte',
     country: 'Brazil',
     state: 'Minas Gerais',
+    socials: [
+        {
+            site: 'Github',
+            url: 'https://github.com/Luscv'
+        },
+        {
+            site: 'LinkedIn',
+            url: 'https://www.linkedin.com/in/luscv/'
+        }
+    ]
 }
 
 const personalList = [
