@@ -10,13 +10,9 @@
                 >
                     <img src="https://cdn.quasar.dev/img/avatar4.jpg">
                 </q-avatar>
-                <div class="q-mt-md text-h6">{{personalInfo.name}}</div>
+                <div class="q-mt-md text-h6">{{profileInfo?.name}}</div>
                 <div class="column">
-                    <q-badge class="q-mt-md text-subtitle2 justify-center" color="grey-9">{{ personalInfo.role }}</q-badge>
-                    <div>
-                        <q-badge class="q-mt-sm q-mx-sm justify-center text-subtitle" color="blue-8">{{ personalInfo.tech }}</q-badge>
-                        <q-badge class="q-mt-sm q-mx-sm justify-center text-subtitle" color="green-8">{{ personalInfo.tech_2 }}</q-badge>
-                    </div>
+                    <q-badge class="q-my-md text-subtitle2 justify-center" color="grey-9">{{ profileInfo?.bio }}</q-badge>
                 </div>
                 
             </div>
@@ -87,13 +83,20 @@
     
 </template>
 <script setup lang="ts">
+import Profile from '../data/profile.data'
+import { ref } from 'vue';
+import { ProfileEntity } from '@/model/entity/Profile.entity';
+import { onMounted } from 'vue';
+import { reactive } from 'vue';
+
+const data = reactive(Profile)
+const profileInfo = ref<ProfileEntity>()
+
 
 const personalInfo = {
     name: 'Lucas Barros',
     age: 24,
     role: 'Software Engineer',
-    tech: 'React Native',
-    tech_2: 'Vue',
     city: 'Belo Horizonte',
     country: 'Brazil',
     state: 'Minas Gerais',
@@ -113,19 +116,19 @@ const personalList = [
     {
         id: 1,
         title: 'EMAIL',
-        data: 'email@mail.com',
+        data: 'lucbarrospc@gmail.com',
         icon: 'mail_outline',
     },
     {
         id: 2,
         title: 'PHONE',
-        data: '+55 (31) 9 1234-5678',
+        data: '+55 (31) 9 7173-7079',
         icon: 'o_phone',
     },
     {
         id: 3,
         title: 'BIRTHDAY',
-        data: '12/12/1212',
+        data: '12/06/1999',
         icon: 'o_event',
     },
     {
@@ -136,4 +139,12 @@ const personalList = [
     },
 ]
 
+
+onMounted(async () => {
+    await data.getGithubProfile().then((res) => {
+        profileInfo.value = res
+        
+        return profileInfo.value
+    })
+})
 </script>
