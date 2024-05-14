@@ -1,8 +1,7 @@
-class API_URL {
+class GITHUB_API_URL {
   API_BASE_GITHUB='https://api.github.com/'
   API_GITHUB_USER='users/luscv'
-  API_GITHUB_REPOS='users/luscv/repos'
-
+  API_GITHUB_REPOS='repos'
 }
 
-export default new API_URL();
+export default new GITHUB_API_URL();
