@@ -1,4 +1,5 @@
 import { PersonalInfoEntity } from '@/model/entity/PersonalInfo.entity';
+import { SocialsEntity } from '@/model/entity/Socials.entity';
 
 class PersonalInfo {
     infoList: Array<PersonalInfoEntity> = [
@@ -26,6 +27,18 @@ class PersonalInfo {
             data: 'Brazil, MG',
             icon: 'o_place',
         },
+    ];
+    socials: Array<SocialsEntity> = [
+        {
+            id: 1,
+            title: 'Github',
+            url: 'https://github.com/Luscv',
+        },
+        {
+            id: 2,
+            title: 'LinkedIn',
+            url: 'https://www.linkedin.com/in/luscv/',
+        }
     ]
     
 }

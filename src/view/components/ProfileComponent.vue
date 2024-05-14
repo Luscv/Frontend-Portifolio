@@ -23,7 +23,7 @@
         <q-separator color="grey-9" class="text-center q-mt-md q-mx-md"/>
         <div class="q-mt-lg">
             <div 
-                v-for="items in infoCards.infoList" 
+                v-for="items in personalInfo.infoList" 
                 v-bind:key="items.id"
                 class="row items-center q-mt-md"
             >
@@ -63,7 +63,7 @@
                         margin-right: 5px;
                     "
                 >
-                    {{ socials.socials[0].title }}
+                    {{ personalInfo.socials[0].title }}
                 </a>
                 <span style="color: #9e9e9e;">●</span>
                 <a 
@@ -75,7 +75,7 @@
                         margin-left: 5px;
                     "
                 >
-                    {{ socials.socials[1].title }}
+                    {{ personalInfo.socials[1].title }}
                 </a>
             </div>
         </div>
@@ -84,7 +84,6 @@
 </template>
 <script setup lang="ts">
 import Profile from '../data/profile.data'
-import Socials from '../data/local/socials.data'
 import PersonalInfo from '../data/local/personalInfo.data'
 import { ref } from 'vue';
 import { ProfileEntity } from '@/model/entity/Profile.entity';
@@ -93,14 +92,19 @@ import { reactive } from 'vue';
 
 const data = reactive(Profile)
 const profile = ref<ProfileEntity>()
-const infoCards = reactive(PersonalInfo)
-const socials = reactive(Socials)
+const personalInfo = reactive(PersonalInfo)
+
 
 onMounted(async () => {
     await data.getGithubProfile().then((res) => {
         profile.value = res
         
         return profile.value
+    })
+    await data.getMyRepositories().then((res) => {
+        
+        console.log(res)
+        return res
     })
 })
 </script>

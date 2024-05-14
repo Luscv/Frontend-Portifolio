@@ -14,6 +14,9 @@ class ProfileData extends Data{
     async getMyRepositories(){
         return await profileService.getRepos()
     }
+    async getMyRepo(){
+        return await profileService.getRepoOnly()
+    }
 }
 
 export default new ProfileData();
