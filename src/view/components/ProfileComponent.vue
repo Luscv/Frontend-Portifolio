@@ -8,15 +8,11 @@
                 rounded
                 class=""
                 >
-                    <img src="https://cdn.quasar.dev/img/avatar4.jpg">
+                    <img :src="profile?.avatar_url">
                 </q-avatar>
-                <div class="q-mt-md text-h6">{{personalInfo.name}}</div>
+                <div class="q-mt-md text-h6">{{profile?.name}}</div>
                 <div class="column">
-                    <q-badge class="q-mt-md text-subtitle2 justify-center" color="grey-9">{{ personalInfo.role }}</q-badge>
-                    <div>
-                        <q-badge class="q-mt-sm q-mx-sm justify-center text-subtitle" color="blue-8">{{ personalInfo.tech }}</q-badge>
-                        <q-badge class="q-mt-sm q-mx-sm justify-center text-subtitle" color="green-8">{{ personalInfo.tech_2 }}</q-badge>
-                    </div>
+                    <q-badge class="q-my-md text-subtitle2 justify-center" color="grey-9">{{ profile?.bio }}</q-badge>
                 </div>
                 
             </div>
@@ -25,9 +21,9 @@
             
         
         <q-separator color="grey-9" class="text-center q-mt-md q-mx-md"/>
-        <div class="q-mt-md">
+        <div class="q-mt-lg">
             <div 
-                v-for="items in personalList" 
+                v-for="items in infoCards.infoList" 
                 v-bind:key="items.id"
                 class="row items-center q-mt-md"
             >
@@ -67,7 +63,7 @@
                         margin-right: 5px;
                     "
                 >
-                    {{ personalInfo.socials[0].site }}
+                    {{ socials.socials[0].title }}
                 </a>
                 <span style="color: #9e9e9e;">●</span>
                 <a 
@@ -79,7 +75,7 @@
                         margin-left: 5px;
                     "
                 >
-                    {{ personalInfo.socials[1].site }}
+                    {{ socials.socials[1].title }}
                 </a>
             </div>
         </div>
@@ -87,53 +83,24 @@
     
 </template>
 <script setup lang="ts">
+import Profile from '../data/profile.data'
+import Socials from '../data/local/socials.data'
+import PersonalInfo from '../data/local/personalInfo.data'
+import { ref } from 'vue';
+import { ProfileEntity } from '@/model/entity/Profile.entity';
+import { onMounted } from 'vue';
+import { reactive } from 'vue';
 
-const personalInfo = {
-    name: 'Lucas Barros',
-    age: 24,
-    role: 'Software Engineer',
-    tech: 'React Native',
-    tech_2: 'Vue',
-    city: 'Belo Horizonte',
-    country: 'Brazil',
-    state: 'Minas Gerais',
-    socials: [
-        {
-            site: 'Github',
-            url: 'https://github.com/Luscv'
-        },
-        {
-            site: 'LinkedIn',
-            url: 'https://www.linkedin.com/in/luscv/'
-        }
-    ]
-}
+const data = reactive(Profile)
+const profile = ref<ProfileEntity>()
+const infoCards = reactive(PersonalInfo)
+const socials = reactive(Socials)
 
-const personalList = [
-    {
-        id: 1,
-        title: 'EMAIL',
-        data: 'email@mail.com',
-        icon: 'mail_outline',
-    },
-    {
-        id: 2,
-        title: 'PHONE',
-        data: '+55 (31) 9 1234-5678',
-        icon: 'o_phone',
-    },
-    {
-        id: 3,
-        title: 'BIRTHDAY',
-        data: '12/12/1212',
-        icon: 'o_event',
-    },
-    {
-        id: 4,
-        title: 'LOCATION',
-        data: 'Brazil, MG',
-        icon: 'o_place',
-    },
-]
-
+onMounted(async () => {
+    await data.getGithubProfile().then((res) => {
+        profile.value = res
+        
+        return profile.value
+    })
+})
 </script>

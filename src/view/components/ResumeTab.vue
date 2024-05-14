@@ -41,48 +41,48 @@
 const work_timeline_entries = [
   {
     id: 1,
-    title: "Experience 1",
-    subtitle: "12/12/2022",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: 'Experience 1',
+    subtitle: '12/12/2022',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
     id: 2,
-    title: "Experience 2",
-    subtitle: "12/12/2023",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: 'Experience 2',
+    subtitle: '12/12/2023',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
     id: 3,
-    title: "Experience 3",
-    subtitle: "12/12/2023",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: 'Experience 3',
+    subtitle: '12/12/2023',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
 ]
 
 const education_timeline_entries = [
   {
     id: 1,
-    title: "Study 1",
-    subtitle: "12/12/2018",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: 'Study 1',
+    subtitle: '12/12/2018',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
     id: 2,
-    title: "Study 2",
-    subtitle: "12/12/2022",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: 'Study 2',
+    subtitle: '12/12/2022',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
     id: 3,
-    title: "Study 3",
-    subtitle: "12/12/2023",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: 'Study 3',
+    subtitle: '12/12/2023',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
     id: 4,
-    title: "Study 4",
-    subtitle: "12/12/2024",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: 'Study 4',
+    subtitle: '12/12/2024',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
 ]
 </script>
