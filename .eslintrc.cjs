@@ -84,6 +84,8 @@ module.exports = {
     // does not work with type definitions
     'no-unused-vars': 'off',
 
+    '@typescript-eslint/no-explicit-any': 'off',
+
     'noImplicitAny': 0,
 
     // allow debugger during development only
