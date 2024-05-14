@@ -8,10 +8,10 @@ const routes: RouteRecordRaw[] = [
   },
   // Always leave this as last one,
   // but you can also remove it
-  {
-    path: '/:catchAll(.*)*',
-    component: () => import('../view/pages/ErrorNotFound.vue'),
-  },
+  // {
+  //   path: '/:catchAll(.*)*',
+  //   component: () => import('../view/pages/ErrorNotFound.vue'),
+  // },
 ];
 
 export default routes;
