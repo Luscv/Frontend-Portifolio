@@ -1,6 +1,6 @@
 <template>
   <div class="q-mx-xl">
-    <q-timeline color="primary" layout="comfortable">
+    <q-timeline color="primary" layout="comfortable" side="left">
       <q-timeline-entry tag="h4" heading>
         Experience
       </q-timeline-entry>
@@ -18,7 +18,7 @@
       >
       </q-timeline-entry>
     </q-timeline>
-    <q-timeline color="primary" layout="comfortable" class="q-mt-md">
+    <q-timeline color="primary" layout="comfortable" side="right" class="q-mt-md">
       <q-timeline-entry tag="h4" heading>
         Education
       </q-timeline-entry>
@@ -57,7 +57,7 @@ const work_timeline_entries = [
     subtitle: "12/12/2023",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
-] 
+]
 
 const education_timeline_entries = [
   {
@@ -84,5 +84,5 @@ const education_timeline_entries = [
     subtitle: "12/12/2024",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
-] 
+]
 </script>
