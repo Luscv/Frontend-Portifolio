@@ -1,12 +1,12 @@
 <template>
   <q-layout view="hHh lpR fFf" class="bg-dark q-pa-xl">
     <div class="justify-center row">
-      <q-card 
-        class="col-2 bg-grey-10 text-grey-4 q-mr-lg" 
-        bordered 
+      <q-card
+        class="col-2 bg-grey-10 text-grey-4 q-mr-lg"
+        bordered
         style="
-          height: max-content; 
-          border-radius: 8px; 
+          height: max-content;
+          border-radius: 8px;
         "
       >
         <ProfileComponent/>
@@ -22,5 +22,13 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import  ProfileComponent  from '../view/components/ProfileComponent.vue'
+import ProfileService from '../controller/services/profile.service'
+
+onMounted(async () => {
+  await ProfileService.getProfile().then((r) => {
+    console.log(r.data)
+  })
+})
 </script>
