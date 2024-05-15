@@ -96,14 +96,13 @@ const personalInfo = reactive(PersonalInfo)
 
 
 onMounted(async () => {
+    
     await data.getGithubProfile().then((res) => {
         profile.value = res
         
         return profile.value
     })
     await data.getMyRepositories().then((res) => {
-        
-        console.log(res)
         return res
     })
 })

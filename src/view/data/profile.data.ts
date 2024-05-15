@@ -1,4 +1,5 @@
 import { ProfileEntity } from 'src/model/entity/Profile.entity';
+import { ProjectEntity } from '@/model/entity/Project.entity';
 import Data from '../data/index';
 import profileService from 'src/controller/services/profile.service';
 
@@ -17,6 +18,7 @@ class ProfileData extends Data{
     async getMyRepo(){
         return await profileService.getRepoOnly()
     }
+
 }
 
 export default new ProfileData();

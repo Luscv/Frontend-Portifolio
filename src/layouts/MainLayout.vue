@@ -6,14 +6,14 @@
         bordered
         style="
           height: max-content;
-          border-radius: 8px;
+          border-radius: 16px;
         "
       >
         <ProfileComponent/>
       </q-card>
 
       <q-page-container class="col-lg-7 col-sm-6 col-xs-12 ">
-        <q-card class="bg-grey-10 text-grey-4" style="height: max-content; border-radius: 8px;">
+        <q-card class="bg-grey-10 text-grey-4" style="height: max-content; border-radius: 16px;">
           <router-view />
         </q-card>
       </q-page-container>
