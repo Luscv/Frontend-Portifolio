@@ -1,6 +1,6 @@
 <template>
     <div class="text-h6">Portifolio</div>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    To be added soon
 </template>
 <script setup lang="ts">
 

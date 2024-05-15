@@ -5,16 +5,20 @@
         <q-toolbar-title class="text-h3">
           {{ tab }}
         </q-toolbar-title>
-        
-        
+
+
       </q-toolbar>
       <q-tabs
           v-model="tab"
-          
+
           active-color="primary"
           indicator-color="transparent"
           class="bg-grey-9 q-pl-xl q-pr-lg"
-          style="width: max-content; border-bottom-left-radius: 60px;"
+          style="
+            width: max-content;
+            border-bottom-left-radius: 60px;
+            border-top-right-radius: 8px;
+          "
         >
           <q-tab name="About" label="About"/>
           <q-tab name="Resume" label="Resume" />
