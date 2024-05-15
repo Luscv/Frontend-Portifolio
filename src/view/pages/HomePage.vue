@@ -14,7 +14,7 @@
           active-color="primary"
           indicator-color="transparent"
           class="bg-grey-9 q-pl-xl q-pr-lg"
-          style="width: max-content; border-bottom-left-radius: 60px;"
+          style="width: max-content; border-bottom-left-radius: 60px; border-top-right-radius: 16px;"
         >
           <q-tab name="About" label="About"/>
           <q-tab name="Resume" label="Resume" />
