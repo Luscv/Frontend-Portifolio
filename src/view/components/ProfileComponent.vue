@@ -87,6 +87,7 @@ import Profile from '../data/profile.data'
 import PersonalInfo from '../data/local/personalInfo.data'
 import { ref } from 'vue';
 import { ProfileEntity } from '@/model/entity/Profile.entity';
+import { ProjectEntity } from '@/model/entity/Project.entity';
 import { onMounted } from 'vue';
 import { reactive } from 'vue';
 
@@ -96,14 +97,13 @@ const personalInfo = reactive(PersonalInfo)
 
 
 onMounted(async () => {
+    
     await data.getGithubProfile().then((res) => {
         profile.value = res
         
         return profile.value
     })
     await data.getMyRepositories().then((res) => {
-        
-        console.log(res)
         return res
     })
 })
