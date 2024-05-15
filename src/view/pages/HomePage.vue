@@ -5,12 +5,12 @@
         <q-toolbar-title class="text-h3">
           {{ tab }}
         </q-toolbar-title>
-        
-        
+
+
       </q-toolbar>
       <q-tabs
           v-model="tab"
-          
+
           active-color="primary"
           indicator-color="transparent"
           class="bg-grey-9 q-pl-xl q-pr-lg"
