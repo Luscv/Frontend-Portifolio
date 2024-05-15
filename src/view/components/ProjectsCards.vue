@@ -5,11 +5,7 @@
         <div class="column no-wrap items-center">
             
             <q-img 
-                size=""
-                rounded
-                class=""
                 style="border-top-left-radius: 8px; border-top-right-radius: 8px;"
-
             >
                 <img src="https://picsum.photos/500/300">
             </q-img>
