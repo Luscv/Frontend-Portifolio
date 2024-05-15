@@ -4,7 +4,7 @@
     </div>
     <div>
         <div class="text-h4 q-mt-lg">Techs</div>
-        <div class="row justify-evenly">
+        <div class="row q-my-sm justify-center q-gutter-xl">
             <TechCards v-for="tech in about.tech" v-bind:key="tech.id" 
                 :tech="tech.title"
                 :icon="tech.icon"

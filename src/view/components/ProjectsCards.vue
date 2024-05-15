@@ -1,12 +1,20 @@
 <template>
-    <q-card bordered class="bg-grey-10 q-pa-lg"
+    <q-card bordered class="bg-grey-10 "
       style="border-radius: 8px;"
     >
         <div class="column no-wrap items-center">
-            <div class="">
-                <q-img ratio="16/9" src="https://picsum.photos/500/300"/>
-            </div>
-            <div class="">
+            
+            <q-img 
+                size=""
+                rounded
+                class=""
+                style="border-top-left-radius: 8px; border-top-right-radius: 8px;"
+
+            >
+                <img src="https://picsum.photos/500/300">
+            </q-img>
+            
+            <div class="q-my-md">
                 <div class="text-subtitle text-center">{{props.name}}</div>
                 <div class="text-caption text-grey-6"> Language: {{ props.language ? props.language : 'Not Found' }}</div>
                 <!-- <div class="text-caption">{{ props.description }}</div> -->

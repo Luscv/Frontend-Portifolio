@@ -13,7 +13,7 @@
         </q-tabs>
         <q-tab-panels class="bg-grey-10" v-model="tab" animated>
           <q-tab-panel name="all">
-            <div class="row justify-evenly q-gutter-sm">
+            <div class="row justify-center q-gutter-xl">
                 <ProjectsCards
                     v-for="project in projects" v-bind:key="project.id"
                     :name="project.name"
