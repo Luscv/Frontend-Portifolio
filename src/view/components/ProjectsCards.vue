@@ -7,7 +7,7 @@
             <q-img 
                 style="border-top-left-radius: 8px; border-top-right-radius: 8px;"
             >
-                <img src="https://picsum.photos/500/300">
+                <img :src="props.content ? props.content[0].download_url : 'Not Found'">
             </q-img>
             
             <div class="q-my-md">
@@ -19,13 +19,18 @@
     </q-card>
 </template>
 <script setup lang="ts">
+import { RepoContentEntity } from '@/model/entity/RepoContent.entity';
+
 const props = defineProps(
     {
-        img: String,
         description: String,
         name: String,
         language: String,
+        content: Array<RepoContentEntity>,
     }
 )
+
+console.log(props.content)
+
 
 </script>

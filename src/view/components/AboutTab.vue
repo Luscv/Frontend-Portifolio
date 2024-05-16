@@ -14,9 +14,9 @@
         </div>
         
     </div>
-    <div>
+    <!-- <div>
         <div class="text-h4 q-mt-lg">Hobbies</div>
-    </div>
+    </div> -->
 </template>
 <script setup lang="ts">
 import { reactive } from 'vue';

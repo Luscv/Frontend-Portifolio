@@ -19,6 +19,7 @@
                     :name="project.name"
                     :language="project.language"
                     :description="project.description"
+                    :content="project.content"
                     class="col-3"
                 />
             </div>
@@ -30,6 +31,7 @@
                     :name="project.name"
                     :language="project.language"
                     :description="project.description"
+                    :content="project.content"
                     class="col-3"
                 />
             </div>
@@ -41,6 +43,7 @@
                     :name="project.name"
                     :language="project.language"
                     :description="project.description"
+                    :content="project.content"
                     class="col-3"
                 />
             </div>
@@ -52,6 +55,9 @@
                     :name="project.name"
                     :language="project.language"
                     :description="project.description"
+                    :full_name="project.full_name"
+                    :default_branch="project.default_branch"
+                    :content="project.content"
                     class="col-3"
                 />
             </div>
@@ -65,9 +71,11 @@ import ProjectsCards from './ProjectsCards.vue'
 import { ProjectEntity } from '@/model/entity/Project.entity';
 
 
+
 const data = reactive(Repositories)
 const projects = ref<Array<ProjectEntity>>([])
 const tab = ref('all')
+
 
 async function frontendRepo(){
     return await data.getFrontendRepositories().then((res) =>{
@@ -108,6 +116,7 @@ onMounted(async () => {
     await data.getMyRepositories().then((res) => {
         projects.value = res
         console.log(projects.value)
+        
         return projects.value
     })
 })
