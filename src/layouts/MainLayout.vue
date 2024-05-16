@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh lpR fFf" class=" bg-dark q-pa-xl">
+  <q-layout class=" bg-dark q-pa-xl">
     <div :class="layout.profile">
       <q-card
         :class="layout.profile_card"
@@ -9,7 +9,7 @@
         <ProfileComponent/>
       </q-card>
 
-      <q-page-container class="col-lg-7 col-sm-6 col-xs-12 ">
+      <q-page-container class="col-7">
         <q-card class="bg-grey-10 text-grey-4" :style="layout.width">
           <router-view />
         </q-card>
@@ -33,12 +33,12 @@ const layout = computed(() => {
   return $q.screen.lt.lg ?
   {
     profile: 'justify-center column',
-    profile_card: 'col-2 bg-grey-10 text-grey-4 q-mr-lg q-mb-lg',
+    profile_card: 'col-2 bg-grey-10 text-grey-4 q-mb-lg',
     width: 'border-radius: 16px;',
   } :
   {
-    profile: 'justify-center row',
-    profile_card: 'col-2 bg-grey-10 text-grey-4 q-mr-lg',
+    profile: 'justify-center row q-col-gutter-lg',
+    profile_card: 'col-2 bg-grey-10 text-grey-4 q-mt-lg',
     width: 'height: max-content; border-radius: 16px',
   }
 
