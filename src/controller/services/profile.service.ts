@@ -16,9 +16,16 @@ class ProfileService {
       make_url(GITHUB_API_URL.API_GITHUB_USER, GITHUB_API_URL.API_GITHUB_REPOS)
     ).then((r) => r.data)
   }
-  async getRepoOnly(): Promise<any>{
+  async getRepoOnly(full_name: string): Promise<any>{
     return axiosConnection.get(
-      make_url(GITHUB_API_URL.API_GITHUB_REPOS, 'Luscv', 'aprendendo-node-primeiraAPI')
+      make_url(GITHUB_API_URL.API_GITHUB_REPOS, full_name)
+    ).then((r) => r.data)
+  }
+
+  async getRepoContent(full_name: string, key: string): Promise<any>{
+    return axiosConnection.get(
+      make_url(GITHUB_API_URL.API_GITHUB_REPOS, full_name, GITHUB_API_URL.API_GITHUB_REPO_IMG, '.github'),
+      {params: {key}}
     ).then((r) => r.data)
   }
 }

@@ -19,7 +19,7 @@
           <q-tab name="About" label="About"/>
           <q-tab name="Resume" label="Resume" />
           <q-tab name="Portifolio" label="Portifolio" />
-          <q-tab name="Contact" label="Contact" />
+          <!-- <q-tab name="Contact" label="Contact" /> -->
         </q-tabs>
     </div>
       <q-separator color="primary" class="text-center q-mt-md q-ml-lg" style="width: 45px; height: 5px; border-radius: 20px;"/>
@@ -33,9 +33,9 @@
           <q-tab-panel name="Portifolio">
             <PortifolioTab/>
           </q-tab-panel>
-          <q-tab-panel name="Contact">
+          <!-- <q-tab-panel name="Contact">
             <ContactTab/>
-          </q-tab-panel>
+          </q-tab-panel> -->
       </q-tab-panels>
     <div></div>
 

@@ -32,3 +32,16 @@ onMounted(async () => {
   })
 })
 </script>
+<style>
+body.screen--xs{
+  .my-div {
+    color: #000;
+  }
+}
+
+body.screen--sm {
+  .my-div {
+    color: #fff;
+  }
+}
+</style>
