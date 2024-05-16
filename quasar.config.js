@@ -104,7 +104,11 @@ module.exports = configure(function (/* ctx */) {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
     framework: {
-      config: {},
+      config: {
+        screen: {
+          bodyClasses: true
+        }
+      },
 
       iconSet: 'material-symbols-outlined', // Quasar icon set
       // lang: 'en-US', // Quasar language pack

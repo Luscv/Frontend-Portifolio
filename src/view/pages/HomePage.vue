@@ -33,9 +33,9 @@
           <q-tab-panel name="Portifolio">
             <PortifolioTab/>
           </q-tab-panel>
-          <q-tab-panel name="Contact">
+          <!-- <q-tab-panel name="Contact">
             <ContactTab/>
-          </q-tab-panel>
+          </q-tab-panel> -->
       </q-tab-panels>
     <div></div>
 

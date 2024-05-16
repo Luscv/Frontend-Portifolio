@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="hHh lpR fFf" class="bg-dark q-pa-xl">
-    <div class="justify-center row">
+  <q-layout view="hHh lpR fFf" class=" bg-dark q-pa-xl">
+    <div :class="layout">
       <q-card
         class="col-2 bg-grey-10 text-grey-4 q-mr-lg"
         bordered
@@ -22,9 +22,21 @@
 </template>
 
 <script setup lang="ts">
+import { useQuasar } from 'quasar';
+
 import { onMounted } from 'vue';
 import  ProfileComponent  from '../view/components/ProfileComponent.vue'
 import ProfileService from '../controller/services/profile.service'
+import { computed } from 'vue';
+
+const $q = useQuasar()
+$q.screen.setSizes({ sm: 1024, md: 1280, lg: 1440, xl: 1920})
+const layout = computed(() => {
+  console.log($q.screen.width)
+  return $q.screen.lt.lg ? 'justify-center column q-col-gutter-sm' : 'justify-center row'
+  
+})
+
 
 onMounted(async () => {
   await ProfileService.getProfile().then((r) => {
@@ -32,3 +44,16 @@ onMounted(async () => {
   })
 })
 </script>
+<style lang="scss">
+q-layout.screen--lg{
+  .my-div {
+    color: #000;
+  }
+}
+
+q-layout.screen--md {
+  .my-div {
+    color: #fff;
+  }
+}
+</style>

@@ -1,6 +1,7 @@
 import { ProjectEntity } from '@/model/entity/Project.entity';
 import Data from '../data/index';
 import profileService from 'src/controller/services/profile.service';
+import { RepoContentEntity } from '@/model/entity/RepoContent.entity'
 
 class ProjectData extends Data {
     constructor(){
@@ -55,7 +56,13 @@ class ProjectData extends Data {
         })  
     }
 
+    async getRepo(full_name: string): Promise<ProjectEntity>{
+        return await profileService.getRepoOnly(full_name)
+    }
 
+    async getRepoContent(full_name: string, key: string): Promise<RepoContentEntity>{
+        return await profileService.getRepoContent(full_name, key)
+    }
 }
 
 export default new ProjectData();
