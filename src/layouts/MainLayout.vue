@@ -27,10 +27,10 @@ import ProfileService from '../controller/services/profile.service'
 import { computed } from 'vue';
 
 const $q = useQuasar()
-$q.screen.setSizes({ sm: 1024, md: 1280, lg: 1680, xl: 1920})
+$q.screen.setSizes({ sm: 720, md: 1024, lg: 1280, xl: 1760})
 const layout = computed(() => {
   console.log($q.screen.width)
-  return $q.screen.lt.lg ?
+  return $q.screen.lt.xl ?
   {
     profile: 'justify-center column',
     profile_card: 'col-2 bg-grey-10 text-grey-4 q-mb-lg',
