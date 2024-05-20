@@ -1,8 +1,7 @@
 <template>
   <div :class="layout.component_layout">
     <div :class="layout.profile_pic">
-      <div>
-        <div></div>
+      <div :class="layout.profile">
         <div :class="layout.profile_bio">
           <q-avatar
           size="100px"
@@ -18,7 +17,6 @@
             </div>
           </div>
         </div>
-        <div></div>
         
       </div>
       <div :class="layout.group_button">
@@ -199,9 +197,10 @@ const layout = computed(() => {
   }
   return {
     component_layout: 'q-ma-md',
+    profile:'',
     profile_pic:'row justify-center',
     profile_bio: 'text-center q-mt-xl',
-    profile_name: 'q-ml-md',
+    profile_name: '',
     component_render: true,
     show_infolist: true,
     info_list: 'q-mt-lg',
