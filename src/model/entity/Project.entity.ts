@@ -8,6 +8,7 @@ export class ProjectEntity implements IBaseModel{
     description?: string; 
     full_name?: string;
     default_branch?: string;
+    html_url?: string;
     content?: Array<RepoContentEntity>;
 
     constructor(this_class?: ProjectEntity){

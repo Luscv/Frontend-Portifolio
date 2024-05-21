@@ -1,22 +1,35 @@
 <template>
-    <q-card bordered class="bg-grey-10 "
-      style="border-radius: 8px;"
+    <a 
+        target="_blank"
+        :href="props.url"
+        style="
+            text-decoration: none;
+            color: #9e9e9e;
+            margin-left: 5px;
+        "
     >
-        <div class="column no-wrap items-center">
-            
-            <q-img 
-                style="border-top-left-radius: 8px; border-top-right-radius: 8px;"
-            >
-                <img :src="props.content ? props.content[0].download_url : 'Not Found'">
-            </q-img>
-            
-            <div class="q-my-md">
-                <div class="text-subtitle text-center">{{props.name}}</div>
-                <div class="text-caption text-grey-6"> Language: {{ props.language ? props.language : 'Not Found' }}</div>
-                <!-- <div class="text-caption">{{ props.description }}</div> -->
+       <q-card bordered class="bg-grey-10 "
+        style="border-radius: 8px;"
+        >
+            <div class="column no-wrap items-center">
+                
+                <q-img 
+                    style="border-top-left-radius: 8px; border-top-right-radius: 8px;"
+                    src="~/assets/NotFound.png"
+                    :ratio="16/9"
+                >
+                    <!-- <img src="~/assets/NotFound.png"> -->
+                </q-img>
+                
+                <div class="q-my-md">
+                    <div class="text-subtitle text-grey-4 text-center">{{props.name}}</div>
+                    <div class="text-caption text-grey-6"> Language: {{ props.language ? props.language : 'Not Found' }}</div>
+                    <!-- <div class="text-caption">{{ props.description }}</div> -->
+                </div>
             </div>
-        </div>
-    </q-card>
+        </q-card> 
+    </a>
+    
 </template>
 <script setup lang="ts">
 import { RepoContentEntity } from '@/model/entity/RepoContent.entity';
@@ -24,6 +37,7 @@ import { RepoContentEntity } from '@/model/entity/RepoContent.entity';
 const props = defineProps(
     {
         description: String,
+        url: String,
         name: String,
         language: String,
         content: Array<RepoContentEntity>,

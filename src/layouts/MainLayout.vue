@@ -27,7 +27,7 @@ import ProfileService from '../controller/services/profile.service'
 import { computed } from 'vue';
 
 const $q = useQuasar()
-$q.screen.setSizes({ sm: 720, md: 1024, lg: 1280, xl: 1760})
+$q.screen.setSizes({ sm: 790, md: 1024, lg: 1280, xl: 1760})
 const layout = computed(() => {
   console.log($q.screen.width)
   return $q.screen.lt.xl ?
