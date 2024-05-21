@@ -13,43 +13,43 @@
         <div class="q-ma-sm text-caption text-grey-6">Mostrando {{ projects.length }} resultados:</div>
         <q-tab-panels class="bg-grey-10" v-model="tab" animated>
           <q-tab-panel name="all">
-            <div class="row justify-center q-gutter-xl">
+            <div :class="layout.card">
                 <ProjectsCards
                     v-for="project in projects" v-bind:key="project.id"
                     :name="project.name"
                     :language="project.language"
                     :description="project.description"
-                    :content="project.content"
-                    class="col-3"
+                    :url="project.html_url"
+                    :class="layout.repoCard_component"
                 />
             </div>
           </q-tab-panel>
           <q-tab-panel name="frontend">
-            <div class="row justify-center q-gutter-xl">
+            <div :class="layout.card">
                 <ProjectsCards
                     v-for="project in projects" v-bind:key="project.id"
                     :name="project.name"
                     :language="project.language"
                     :description="project.description"
-                    :content="project.content"
-                    class="col-3"
+                    :url="project.html_url"
+                    :class="layout.repoCard_component"
                 />
             </div>
           </q-tab-panel>
           <q-tab-panel name="mobile">
-            <div class="row justify-center q-gutter-xl">
+            <div :class="layout.card">
                 <ProjectsCards
                     v-for="project in projects" v-bind:key="project.id"
                     :name="project.name"
                     :language="project.language"
                     :description="project.description"
-                    :content="project.content"
-                    class="col-3"
+                    :url="project.html_url"
+                    :class="layout.repoCard_component"
                 />
             </div>
           </q-tab-panel>
           <q-tab-panel name="university">
-            <div class="row justify-center q-gutter-xl">
+            <div :class="layout.card">
                 <ProjectsCards
                     v-for="project in projects" v-bind:key="project.id"
                     :name="project.name"
@@ -57,24 +57,57 @@
                     :description="project.description"
                     :full_name="project.full_name"
                     :default_branch="project.default_branch"
-                    :content="project.content"
-                    class="col-3"
+                    :url="project.html_url"
+                    :class="layout.repoCard_component"
                 />
             </div>
           </q-tab-panel>
       </q-tab-panels>
 </template>
 <script setup lang="ts">
-import { reactive, ref, onMounted } from 'vue';
+import { reactive, ref, onMounted, computed } from 'vue';
 import Repositories from '../data/projects.data';
 import ProjectsCards from './ProjectsCards.vue'
 import { ProjectEntity } from '@/model/entity/Project.entity';
-
+import { Screen } from 'quasar';
 
 
 const data = reactive(Repositories)
 const projects = ref<Array<ProjectEntity>>([])
 const tab = ref('all')
+
+
+const layout = computed(() => {
+    if(Screen.lt.sm){
+        return {
+            repoCard_component: 'col-8',
+            card: 'row justify-center q-gutter-xl',
+        }
+    }
+    if(Screen.lt.md){
+        return {
+            repoCard_component: 'col-5',
+            card: 'row justify-center q-gutter-xl',
+        }
+    }
+    if(Screen.lt.lg){
+        return {
+            repoCard_component: 'col-3',
+            card: 'row justify-center q-gutter-xl',
+        }
+    }
+    if(Screen.lt.xl){
+        return {
+            repoCard_component: 'col-3',
+            card: 'row justify-center q-gutter-xl',
+        }
+    }
+    return{ 
+        repoCard_component: 'col-3',
+        card: 'row justify-center q-gutter-xl',
+    }
+});
+
 
 
 async function frontendRepo(){

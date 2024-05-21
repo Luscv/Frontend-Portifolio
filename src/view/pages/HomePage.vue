@@ -25,8 +25,9 @@
       </div>
       
     </div>
+    <div>
       <q-separator color="primary" class="text-center q-mt-md q-ml-lg" style="width: 45px; height: 5px; border-radius: 20px;"/>
-      <q-tab-panels class="bg-grey-10" v-model="tab" animated>
+      <q-tab-panels class="bg-grey-10" v-model="tab" animated style="border-radius: 16px;">
           <q-tab-panel name="About">
             <AboutTab/>
           </q-tab-panel>
@@ -40,7 +41,7 @@
             <ContactTab/>
           </q-tab-panel> -->
       </q-tab-panels>
-    <div></div>
+    </div>
 
   </q-page>
 
