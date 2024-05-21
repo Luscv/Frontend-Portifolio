@@ -20,7 +20,7 @@
           <q-tab name="About" label="About"/>
           <q-tab name="Resume" label="Resume" />
           <q-tab name="Portifolio" label="Portifolio" />
-          <q-tab name="Contact" label="Contact" />
+          <!-- <q-tab name="Contact" label="Contact" /> -->
         </q-tabs>
       </div>
       

@@ -1,8 +1,8 @@
 {
   "name": "frontend-portifolio",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "my frontend portifolio",
-  "productName": "Quasar App",
+  "productName": "Lucas Barros - Portifolio",
   "author": "Lucas Barros",
   "private": true,
   "scripts": {
