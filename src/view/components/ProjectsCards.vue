@@ -15,7 +15,7 @@
 
                 <q-img
                     style="border-top-left-radius: 8px; border-top-right-radius: 8px;"
-                    :src="`./public/${props.name}.png`"
+                    :src="`${props.name}.png`"
                     :ratio="16/9"
                 >
                     <!-- <img src="~/assets/NotFound.png"> -->
