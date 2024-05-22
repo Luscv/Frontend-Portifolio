@@ -1,7 +1,7 @@
 import { TechEntity } from '@/model/entity/Tech.entity';
 
 class About {
-    bio = `Apaixonado por música e tecnologia, sempre amprimorando minhas habilidades como Engenheiro de Software através de novos desafios. Com experiência academica em Ciência da Computação e atualmente em Análise e desenvolvimento de sistemas, hoje estou focado em desenvolvimento frontend e mobile. Além de possuir inglês fluente, me destaco por minhas excelentes habilidades interpessoais, adquiridas em minhas experiências com vendas e trabalhos como freelancer na música.\r\n
+    bio = `Apaixonado por música e tecnologia, sempre aprimorando minhas habilidades como Engenheiro de Software através de novos desafios. Com experiência academica em Ciência da Computação e atualmente em Análise e desenvolvimento de sistemas, hoje estou focado em desenvolvimento frontend e mobile. Além de possuir inglês fluente, me destaco por minhas excelentes habilidades interpessoais, adquiridas em minhas experiências com vendas e trabalhos como freelancer na música.\r\n
     Autodidata, dedico meu tempo livre a aprender sobre temas que me inspiram, como programação, produção musical e criação de vídeos. Reconhecido por minha dedicação, já fui premiado em torneios de robótica no ensino médio, prêmio na música com uma produção autoral além de grandes entregas de projetos no meu trabalho como desenvolvedor.`;
     objetivos =  `Atualmente focado no desenvolvimento Web, estou buscando expandir meu conhecimento em Mobile, utilizando React Native e futuramente Swift para desenvovimento nativo iOS.
     Estudando Node para de backend visando melhorias em projetos pessoais.`;
