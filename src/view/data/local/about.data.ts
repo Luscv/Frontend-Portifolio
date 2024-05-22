@@ -1,9 +1,8 @@
 import { TechEntity } from '@/model/entity/Tech.entity';
 
 class About {
-    bio = `Sempre em busca de novas experiências e desafios que possam contribuir para meu desenvolvimento profissional.
-    Sou extremamente dedicado e gosto de encarar novos desafios a fim de me tornar um profissional cada vez mais experiente, aprendendo cada dia mais e sempre colocando meus conhecimentos em prática.
-    Graduando em Análise e desenvolvimento de sistemas, com Inglês fluente.`;
+    bio = `Apaixonado por música e tecnologia, sempre amprimorando minhas habilidades como Engenheiro de Software através de novos desafios. Com experiência academica em Ciência da Computação e atualmente em Análise e desenvolvimento de sistemas, hoje estou focado em desenvolvimento frontend e mobile. Além de possuir inglês fluente, me destaco por minhas excelentes habilidades interpessoais, adquiridas em minhas experiências com vendas e trabalhos como freelancer na música.\r\n
+    Autodidata, dedico meu tempo livre a aprender sobre temas que me inspiram, como programação, produção musical e criação de vídeos. Reconhecido por minha dedicação, já fui premiado em torneios de robótica no ensino médio, prêmio na música com uma produção autoral além de grandes entregas de projetos no meu trabalho como desenvolvedor.`;
     objetivos =  `Atualmente focado no desenvolvimento Web, estou buscando expandir meu conhecimento em Mobile, utilizando React Native e futuramente Swift para desenvovimento nativo iOS.
     Estudando Node para de backend visando melhorias em projetos pessoais.`;
     tech: Array<TechEntity> = [
@@ -55,3 +54,11 @@ class About {
 
 
 export default new About();
+
+
+
+// BIO ENGLISH
+
+
+// Avid music and technology enthusiast, I'm constantly seeking opportunities to enhance my software development expertise. Possessing a solid academic background in Computer Science, currently pursuing expertise in Systems Analysis and Development, I'm currently specializing in frontend and mobile development. In addition to being a fluent English speaker, I stand out for my excellent interpersonal skills, acquired through my experience in sales and freelance work in music.
+// As self-taught learner, I dedicate my free time to exploring topics that ignite my passion, such as programming, music production and video editing. Recognized for my dedication, I've been awarded in robotics tournaments in high school, a music award with an original production and also made great project deliveries in my work as a developer.
