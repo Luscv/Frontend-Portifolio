@@ -1,6 +1,6 @@
 <template>
     <q-tabs
-          v-model="tab"  
+          v-model="tab"
           active-color="primary"
           indicator-color="transparent"
         >
@@ -10,7 +10,7 @@
             <q-tab name="university" label="University" @click="universityRepo"/>
             <!-- <q-tab name="other" label="Other" /> -->
         </q-tabs>
-        <div class="q-ma-sm text-caption text-grey-6">Mostrando {{ projects.length }} resultados:</div>
+        <div class="q-mt-sm text-caption text-grey-6">Mostrando {{ projects.length }} resultados:</div>
         <q-tab-panels class="bg-grey-10" v-model="tab" animated>
           <q-tab-panel name="all">
             <div :class="layout.card">
@@ -80,31 +80,31 @@ const tab = ref('all')
 const layout = computed(() => {
     if(Screen.lt.sm){
         return {
-            repoCard_component: 'col-8',
-            card: 'row justify-center q-gutter-xl',
+            repoCard_component: 'col-8 q-mt-lg',
+            card: 'row justify-center',
         }
     }
     if(Screen.lt.md){
         return {
             repoCard_component: 'col-5',
-            card: 'row justify-center q-gutter-xl',
+            card: 'row justify-evenly q-gutter-xl',
         }
     }
     if(Screen.lt.lg){
         return {
             repoCard_component: 'col-3',
-            card: 'row justify-center q-gutter-xl',
+            card: 'row justify-evenly q-gutter-xl',
         }
     }
     if(Screen.lt.xl){
         return {
             repoCard_component: 'col-3',
-            card: 'row justify-center q-gutter-xl',
+            card: 'row justify-evenly q-gutter-xl',
         }
     }
-    return{ 
+    return{
         repoCard_component: 'col-3',
-        card: 'row justify-center q-gutter-xl',
+        card: 'row justify-evenly q-gutter-xl',
     }
 });
 
@@ -149,7 +149,7 @@ onMounted(async () => {
     await data.getMyRepositories().then((res) => {
         projects.value = res
         console.log(projects.value)
-        
+
         return projects.value
     })
 })
