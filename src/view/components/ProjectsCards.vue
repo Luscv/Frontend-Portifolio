@@ -15,7 +15,7 @@
 
                 <q-img
                     style="border-top-left-radius: 8px; border-top-right-radius: 8px;"
-                    :src="img()"
+                    :src="`./public/${props.name}.png`"
                     :ratio="16/9"
                 >
                     <!-- <img src="~/assets/NotFound.png"> -->
@@ -43,15 +43,6 @@ const props = defineProps(
         content: Array<RepoContentEntity>,
     }
 )
-
-const img =(() => {
-
-  if (`public/${props.name}.png`) {
-    return `./public/${props.name}.png`
-
-  }
-  return './public/No-Image.png'
-})
 
 
 </script>
