@@ -47,10 +47,10 @@ const props = defineProps(
 const img =(() => {
 
   if (`public/${props.name}.png`) {
-    return `/public/${props.name}.png`
+    return `./public/${props.name}.png`
 
   }
-  return '/public/No-Image.png'
+  return './public/No-Image.png'
 })
 
 
