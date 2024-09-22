@@ -8,12 +8,29 @@
       >
         <ProfileComponent/>
       </q-card>
-
       <q-page-container class="col-7">
         <q-card class="bg-grey-10 text-grey-4" :style="layout.width">
           <router-view />
         </q-card>
       </q-page-container>
+      <div>
+        <q-btn-dropdown icon="o_translate" color="primary" >
+          <q-list>
+            <q-item clickable v-close-popup @click="() => onLangClick('pt-BR')">
+              <q-item-section>
+                <q-item-label>{{ $t('portuguese') }}</q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-close-popup @click="() => onLangClick('en-US')">
+              <q-item-section>
+                <q-item-label>{{$t('english')}}</q-item-label>
+              </q-item-section>
+            </q-item>
+
+          </q-list>
+        </q-btn-dropdown>
+      </div>
     </div>
   </q-layout>
 </template>
@@ -25,8 +42,12 @@ import { onMounted } from 'vue';
 import  ProfileComponent  from '../view/components/ProfileComponent.vue'
 import ProfileService from '../controller/services/profile.service'
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+
 
 const $q = useQuasar()
+const {locale} = useI18n()
+
 $q.screen.setSizes({ sm: 790, md: 1024, lg: 1280, xl: 1760})
 const layout = computed(() => {
   if($q.screen.lt.sm){
@@ -68,6 +89,10 @@ const layout = computed(() => {
   }
 
 })
+
+function onLangClick(lang: string){
+  locale.value = lang
+}
 
 
 onMounted(async () => {

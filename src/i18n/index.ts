@@ -1,5 +1,10 @@
 import enUS from './locales/en-US';
+import ptBR from './locales/pt-BR'
 
-export default {
-  'en-US': enUS
+const messages = {
+  'en-US': enUS,
+  'pt-BR': ptBR
 };
+
+
+export default messages

@@ -4,24 +4,24 @@
         {{ about.bio }}
         </div>
         <div>
-            <div class="text-h4 q-mt-lg">Goals</div>
+            <div class="text-h4 q-mt-lg">{{$t('goals')}}</div>
             <div class="q-mt-md">{{ about.objetivos }}</div>
         </div>
         <div>
-            <div class="text-h4 q-mt-lg">Techs</div>
+            <div class="text-h4 q-mt-lg">{{$t('techs')}}</div>
             <div :class="layout.divCardContainer" >
-                <TechCards v-for="tech in about.tech" v-bind:key="tech.id" 
+                <TechCards v-for="tech in about.tech" v-bind:key="tech.id"
                     :tech="tech.title"
                     :icon="tech.icon"
-                    :description="tech.description" 
+                    :description="tech.description"
                     :class="layout.techCard_component"
-                    
+
                 />
             </div>
-            
-        </div> 
+
+        </div>
     </div>
-    
+
     <!-- <div>
         <div class="text-h4 q-mt-lg">Hobbies</div>
     </div> -->
@@ -34,6 +34,7 @@ import About from '../data/local/about.data'
 
 
 const about = reactive(About)
+
 
 const layout = computed(() => {
     if(Screen.lt.sm){

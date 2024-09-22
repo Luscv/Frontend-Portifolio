@@ -1,4 +1,10 @@
 export default {
-  failed: 'Action failed',
-  success: 'Action was successful'
+  language: 'Language',
+  portuguese: 'Portuguese',
+  english: 'English',
+  About: 'About',
+  goals: 'Goals',
+  techs: 'Techs',
+  Resume: 'Carrer',
+  Portifolio: 'Projects',
 };

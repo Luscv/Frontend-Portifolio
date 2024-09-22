@@ -3,7 +3,7 @@
     <div :class="layout.toolbar">
       <q-toolbar class="q-pt-lg q-pl-lg items-end" style="width: min-content;">
         <q-toolbar-title class="text-h3">
-          {{ tab }}
+          {{ title }}
         </q-toolbar-title>
 
 
@@ -17,13 +17,13 @@
           :class="layout.tabs_class"
           :style="layout.tabs_style"
         >
-          <q-tab name="About" label="About"/>
-          <q-tab name="Resume" label="Resume" />
-          <q-tab name="Portifolio" label="Portifolio" />
+          <q-tab name="About" :label="$t('About')"/>
+          <q-tab name="Resume" :label="$t('Resume')" />
+          <q-tab name="Portifolio" :label="$t('Portifolio')" />
           <!-- <q-tab name="Contact" label="Contact" /> -->
         </q-tabs>
       </div>
-      
+
     </div>
     <div>
       <q-separator color="primary" class="text-center q-mt-md q-ml-lg" style="width: 45px; height: 5px; border-radius: 20px;"/>
@@ -52,11 +52,14 @@ import AboutTab from '../components/AboutTab.vue';
 import ResumeTab from '../components/ResumeTab.vue';
 import PortifolioTab from '../components/PortifolioTab.vue';
 import { Screen } from 'quasar';
+import { useI18n } from 'vue-i18n';
 import ContactTab from '../components/ContactTab.vue';
 
+const { t } = useI18n()
 
 const tab = ref('About')
 
+const title = computed(() => t(tab.value))
 
 const layout = computed(() => {
   if(Screen.lt.sm){
