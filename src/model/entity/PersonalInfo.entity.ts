@@ -2,8 +2,8 @@ import { IBaseModel } from '../shared/base-model';
 
 export class PersonalInfoEntity implements IBaseModel{
     id: number| string | undefined;
-    title?: string;
-    data?: string;
+    name?: string;
+    content?: string;
     icon?: string;
 
     constructor(this_class?: PersonalInfoEntity){

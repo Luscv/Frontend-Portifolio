@@ -95,9 +95,4 @@ function onLangClick(lang: string){
 }
 
 
-onMounted(async () => {
-  await ProfileService.getProfile().then((r) => {
-    console.log(r.data)
-  })
-})
 </script>
