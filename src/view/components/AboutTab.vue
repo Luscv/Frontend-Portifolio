@@ -39,13 +39,17 @@ import { mdiVuejs } from '@mdi/js';
 import { mdiLanguageJavascript } from '@mdi/js';
 import { mdiLanguageTypescript } from '@mdi/js';
 import { mdiNodejs } from '@mdi/js';
+import { mdiLanguageC } from '@mdi/js';
+import { mdiLanguagePython } from '@mdi/js';
 
 const icons: {[key: string]: string} = {
     mdiReact,
     mdiVuejs,
     mdiLanguageJavascript,
     mdiLanguageTypescript,
-    mdiNodejs
+    mdiNodejs,
+    mdiLanguageC,
+    mdiLanguagePython
 }
 
 const data = reactive(About)

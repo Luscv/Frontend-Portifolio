@@ -17,6 +17,18 @@ class ProfileService {
     ).then((r) => r.data.about)
   }
 
+  async getProjects(lang: string): Promise<any>{
+    return axiosConnection.get(
+      make_url(PORTIFOLIO_API.BASE_SERVICE, PORTIFOLIO_API.API_PROJECTS), { params: {lang}}
+    ).then((r) => r.data.projects)
+  }
+
+  async getCertificates(lang: string): Promise<any>{
+    return axiosConnection.get(
+      make_url(PORTIFOLIO_API.BASE_SERVICE, PORTIFOLIO_API.API_CERTIFICATES), { params: {lang}}
+    ).then((r) => r.data.certificates)
+  }
+
 //   async getRepos(): Promise<any>{
 //     return axiosConnection.get(
 //       make_url(PORTIFOLIO_API.API_GITHUB_USER, PORTIFOLIO_API.API_GITHUB_REPOS)

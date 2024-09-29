@@ -16,6 +16,14 @@ class ProfileData extends Data{
       return await profileService.getAbout(lang)
     }
 
+    async getProjects(lang: string){
+      return await profileService.getProjects(lang)
+    }
+
+    async getCertificates(lang: string){
+      return await profileService.getCertificates(lang)
+    }
+
     // async getMyRepositories(){
     //     return await profileService.getRepos()
     // }

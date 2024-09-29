@@ -14,7 +14,7 @@
         </q-card>
       </q-page-container>
       <div>
-        <q-btn-dropdown icon="o_translate" color="primary" >
+        <q-btn-dropdown fab-mini icon="o_translate" color="primary" text-color="secondary" :content-style="{ backgroundColor: '#cdcdcd'}">
           <q-list>
             <q-item clickable v-close-popup @click="() => onLangClick('pt-BR')">
               <q-item-section>

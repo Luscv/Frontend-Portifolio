@@ -1,17 +1,16 @@
 import { IBaseModel } from '../shared/base-model';
-import { RepoContentEntity } from './RepoContent.entity';
 import { TechEntity } from './Tech.entity';
 
-export class ProjectEntity implements IBaseModel{
+export class CertificateEntity implements IBaseModel{
     id: number| string | undefined;
-    description?: string;
-    repoUrl?: string;
+    title?: string;
+    category?: string;
     img?: string;
-    techs?: TechEntity[];
-    type?: string;
+    issuedAt?: string;
     url?: string;
+    techs?: TechEntity[];
 
-    constructor(this_class?: ProjectEntity){
+    constructor(this_class?: CertificateEntity){
         if(this_class){
             Object.assign(this, this_class)
         }
