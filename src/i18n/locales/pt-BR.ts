@@ -5,6 +5,21 @@ export default {
   About: 'Sobre mim',
   goals: 'Objetivos',
   techs: 'Tecnologias',
-  Resume: 'Carreira',
-  Portifolio: 'Projetos',
+  Carrer: 'Carreira',
+  Projects: 'Projetos',
+  Certificates: 'Certificados',
+
+  all: 'Todos',
+  mobile: 'Móvel',
+  showing: 'Mostrando',
+  results: 'resultados',
+  tech_stack: 'Stack',
+  click_here: 'Clique Aqui',
+  deploy_available: 'Deploy disponível',
+  deploy_not_available: 'Deploy não disponível',
+
+  software_development: 'Desenvolvimento de Software',
+  languages: 'Idiomas',
+  other: 'Outro',
+  issued_at: 'Concluído em',
 };

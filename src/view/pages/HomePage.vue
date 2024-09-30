@@ -18,9 +18,9 @@
           :style="layout.tabs_style"
         >
           <q-tab name="About" :label="$t('About')"/>
-          <q-tab name="Resume" :label="$t('Resume')" />
-          <q-tab name="Portifolio" :label="$t('Portifolio')" />
-          <!-- <q-tab name="Contact" label="Contact" /> -->
+          <q-tab name="Carrer" :label="$t('Carrer')" />
+          <q-tab name="Projects" :label="$t('Projects')" />
+          <q-tab name="Certificates" :label="$t('Certificates')" />
         </q-tabs>
       </div>
 
@@ -31,15 +31,15 @@
           <q-tab-panel name="About">
             <AboutTab/>
           </q-tab-panel>
-          <q-tab-panel name="Resume">
-            <ResumeTab/>
+          <q-tab-panel name="Carrer">
+            <CarrerTab/>
           </q-tab-panel>
-          <q-tab-panel name="Portifolio">
-            <PortifolioTab/>
+          <q-tab-panel name="Projects">
+            <ProjectsTab/>
           </q-tab-panel>
-          <!-- <q-tab-panel name="Contact">
-            <ContactTab/>
-          </q-tab-panel> -->
+          <q-tab-panel name="Certificates">
+            <CertificatesTab/>
+          </q-tab-panel>
       </q-tab-panels>
     </div>
 
@@ -49,11 +49,11 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import AboutTab from '../components/AboutTab.vue';
-import ResumeTab from '../components/ResumeTab.vue';
-import PortifolioTab from '../components/PortifolioTab.vue';
+import CarrerTab from '../components/CarrerTab.vue';
+import ProjectsTab from '../components/ProjectsTab.vue';
 import { Screen } from 'quasar';
 import { useI18n } from 'vue-i18n';
-import ContactTab from '../components/ContactTab.vue';
+import CertificatesTab from '../components/CertificatesTab.vue';
 
 const { t } = useI18n()
 

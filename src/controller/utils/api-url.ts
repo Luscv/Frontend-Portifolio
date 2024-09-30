@@ -1,11 +1,14 @@
-class GITHUB_API_URL {
-  API_BASE_GITHUB='https://api.github.com/'
-  API_GITHUB_USER='users/luscv'
-  API_GITHUB_REPOS='repos'
-  API_GITHUB_REPO_IMG='contents'
+class PORTIFOLIO_SERVER {
+  BASE_SERVICE = 'https://portifolio-server.vercel.app'
+  API_PROFILE = 'profile'
+  API_ABOUT = 'about'
+  API_CARRER = 'carrer'
+  API_PROJECTS = 'projects'
+  API_CERTIFICATES = 'certificates'
 }
 
-export default new GITHUB_API_URL();
+export default new PORTIFOLIO_SERVER();
+
 
 
 // /.github?ref=master (PATH TO IMAGES)

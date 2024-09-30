@@ -1,32 +1,38 @@
 import axiosConnection from '../config/axios.connection';
-import GITHUB_API_URL from '../utils/api-url';
+import PORTIFOLIO_API from '../utils/api-url';
 import { make_url } from '../utils/make-url';
 
 class ProfileService {
 
 
-  async getProfile(): Promise<any>{
+  async getProfile(lang: string): Promise<any>{
     return axiosConnection.get(
-      make_url(GITHUB_API_URL.API_GITHUB_USER)
-    ).then((r) => r.data)
+      make_url(PORTIFOLIO_API.BASE_SERVICE, PORTIFOLIO_API.API_PROFILE), { params: {lang}}
+    ).then((r) => r.data.profile)
   }
 
-  async getRepos(): Promise<any>{
+  async getAbout(lang: string): Promise<any>{
     return axiosConnection.get(
-      make_url(GITHUB_API_URL.API_GITHUB_USER, GITHUB_API_URL.API_GITHUB_REPOS)
-    ).then((r) => r.data)
-  }
-  async getRepoOnly(full_name: string): Promise<any>{
-    return axiosConnection.get(
-      make_url(GITHUB_API_URL.API_GITHUB_REPOS, full_name)
-    ).then((r) => r.data)
+      make_url(PORTIFOLIO_API.BASE_SERVICE, PORTIFOLIO_API.API_ABOUT), { params: {lang}}
+    ).then((r) => r.data.about)
   }
 
-  async getRepoContent(full_name: string, key: string): Promise<any>{
+  async getProjects(lang: string): Promise<any>{
     return axiosConnection.get(
-      make_url(GITHUB_API_URL.API_GITHUB_REPOS, full_name, GITHUB_API_URL.API_GITHUB_REPO_IMG, '.github'),
-      {params: {key}}
-    ).then((r) => r.data)
+      make_url(PORTIFOLIO_API.BASE_SERVICE, PORTIFOLIO_API.API_PROJECTS), { params: {lang}}
+    ).then((r) => r.data.projects)
+  }
+
+  async getCertificates(lang: string): Promise<any>{
+    return axiosConnection.get(
+      make_url(PORTIFOLIO_API.BASE_SERVICE, PORTIFOLIO_API.API_CERTIFICATES), { params: {lang}}
+    ).then((r) => r.data.certificates)
+  }
+
+  async getCarrer(lang: string): Promise<any>{
+    return axiosConnection.get(
+      make_url(PORTIFOLIO_API.BASE_SERVICE, PORTIFOLIO_API.API_CARRER), { params: {lang}}
+    ).then((r) => r.data.carrer)
   }
 }
 

@@ -8,16 +8,32 @@ class ProfileData extends Data{
         super();
     }
 
-    async getGithubProfile(): Promise<ProfileEntity>{
-        return await profileService.getProfile()
+    async getProfile(lang: string){
+      return await profileService.getProfile(lang)
     }
 
-    async getMyRepositories(){
-        return await profileService.getRepos()
+    async getAbout(lang: string){
+      return await profileService.getAbout(lang)
     }
-    async getMyRepo(){
-        return await profileService.getRepoOnly()
+
+    async getProjects(lang: string){
+      return await profileService.getProjects(lang)
     }
+
+    async getCertificates(lang: string){
+      return await profileService.getCertificates(lang)
+    }
+
+    async getCarrer(lang: string){
+      return await profileService.getCarrer(lang)
+    }
+
+    // async getMyRepositories(){
+    //     return await profileService.getRepos()
+    // }
+    // async getMyRepo(){
+    //     return await profileService.getRepoOnly()
+    // }
 
 }
 
