@@ -1,39 +1,59 @@
 <template>
     <div>
        <div>
-        {{ about.bio }}
+        {{ about?.bio }}
         </div>
         <div>
-            <div class="text-h4 q-mt-lg">Goals</div>
-            <div class="q-mt-md">{{ about.objetivos }}</div>
+            <div class="text-h4 q-mt-lg">{{$t('goals')}}</div>
+            <div class="q-mt-md">{{ about?.goals }}</div>
         </div>
         <div>
-            <div class="text-h4 q-mt-lg">Techs</div>
+            <div class="text-h4 q-mt-lg">{{$t('techs')}}</div>
             <div :class="layout.divCardContainer" >
-                <TechCards v-for="tech in about.tech" v-bind:key="tech.id" 
+                <TechCards v-for="tech in about?.techs" v-bind:key="tech.id"
                     :tech="tech.title"
-                    :icon="tech.icon"
-                    :description="tech.description" 
+                    :icon="tech.icon ? icons[tech?.icon] : 'null'"
+                    :description="tech.description"
                     :class="layout.techCard_component"
-                    
+
                 />
             </div>
-            
-        </div> 
+
+        </div>
     </div>
-    
+
     <!-- <div>
         <div class="text-h4 q-mt-lg">Hobbies</div>
     </div> -->
 </template>
 <script setup lang="ts">
-import { reactive, computed } from 'vue';
+import { reactive, computed, ref, watch, onMounted } from 'vue';
 import { Screen } from 'quasar';
 import TechCards from './TechCards.vue'
-import About from '../data/local/about.data'
+import About from '../data/profile.data'
+import { useI18n } from 'vue-i18n';
+import { AboutEntity } from '@/model/entity/About.entity';
 
+import { mdiReact } from '@mdi/js'
+import { mdiVuejs } from '@mdi/js';
+import { mdiLanguageJavascript } from '@mdi/js';
+import { mdiLanguageTypescript } from '@mdi/js';
+import { mdiNodejs } from '@mdi/js';
+import { mdiLanguageC } from '@mdi/js';
+import { mdiLanguagePython } from '@mdi/js';
 
-const about = reactive(About)
+const icons: {[key: string]: string} = {
+    mdiReact,
+    mdiVuejs,
+    mdiLanguageJavascript,
+    mdiLanguageTypescript,
+    mdiNodejs,
+    mdiLanguageC,
+    mdiLanguagePython
+}
+
+const data = reactive(About)
+const about = ref<AboutEntity>()
 
 const layout = computed(() => {
     if(Screen.lt.sm){
@@ -66,4 +86,22 @@ const layout = computed(() => {
     }
 });
 
+const {locale} = useI18n()
+
+watch(locale, async(newLang, oldLang) => {
+  await data.getAbout(locale.value).then((res) => {
+        about.value = res
+        console.log(about.value)
+        return about.value
+    })
+})
+
+onMounted(async () => {
+
+    await data.getAbout(locale.value).then((res) => {
+        about.value = res
+        console.log(about.value)
+        return about.value
+    })
+})
 </script>

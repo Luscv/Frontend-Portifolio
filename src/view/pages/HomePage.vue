@@ -3,7 +3,7 @@
     <div :class="layout.toolbar">
       <q-toolbar class="q-pt-lg q-pl-lg items-end" style="width: min-content;">
         <q-toolbar-title class="text-h3">
-          {{ tab }}
+          {{ title }}
         </q-toolbar-title>
 
 
@@ -17,13 +17,13 @@
           :class="layout.tabs_class"
           :style="layout.tabs_style"
         >
-          <q-tab name="About" label="About"/>
-          <q-tab name="Resume" label="Resume" />
-          <q-tab name="Portifolio" label="Portifolio" />
-          <!-- <q-tab name="Contact" label="Contact" /> -->
+          <q-tab name="About" :label="$t('About')"/>
+          <q-tab name="Carrer" :label="$t('Carrer')" />
+          <q-tab name="Projects" :label="$t('Projects')" />
+          <q-tab name="Certificates" :label="$t('Certificates')" />
         </q-tabs>
       </div>
-      
+
     </div>
     <div>
       <q-separator color="primary" class="text-center q-mt-md q-ml-lg" style="width: 45px; height: 5px; border-radius: 20px;"/>
@@ -31,15 +31,15 @@
           <q-tab-panel name="About">
             <AboutTab/>
           </q-tab-panel>
-          <q-tab-panel name="Resume">
-            <ResumeTab/>
+          <q-tab-panel name="Carrer">
+            <CarrerTab/>
           </q-tab-panel>
-          <q-tab-panel name="Portifolio">
-            <PortifolioTab/>
+          <q-tab-panel name="Projects">
+            <ProjectsTab/>
           </q-tab-panel>
-          <!-- <q-tab-panel name="Contact">
-            <ContactTab/>
-          </q-tab-panel> -->
+          <q-tab-panel name="Certificates">
+            <CertificatesTab/>
+          </q-tab-panel>
       </q-tab-panels>
     </div>
 
@@ -49,14 +49,17 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import AboutTab from '../components/AboutTab.vue';
-import ResumeTab from '../components/ResumeTab.vue';
-import PortifolioTab from '../components/PortifolioTab.vue';
+import CarrerTab from '../components/CarrerTab.vue';
+import ProjectsTab from '../components/ProjectsTab.vue';
 import { Screen } from 'quasar';
-import ContactTab from '../components/ContactTab.vue';
+import { useI18n } from 'vue-i18n';
+import CertificatesTab from '../components/CertificatesTab.vue';
 
+const { t } = useI18n()
 
 const tab = ref('About')
 
+const title = computed(() => t(tab.value))
 
 const layout = computed(() => {
   if(Screen.lt.sm){
