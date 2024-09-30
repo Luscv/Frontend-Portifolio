@@ -24,6 +24,10 @@ class ProfileData extends Data{
       return await profileService.getCertificates(lang)
     }
 
+    async getCarrer(lang: string){
+      return await profileService.getCarrer(lang)
+    }
+
     // async getMyRepositories(){
     //     return await profileService.getRepos()
     // }

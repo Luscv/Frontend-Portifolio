@@ -13,7 +13,7 @@
           <router-view />
         </q-card>
       </q-page-container>
-      <div>
+      <div v-if="!$q.screen.lt.xl">
         <q-btn-dropdown fab-mini icon="o_translate" color="primary" text-color="secondary" :content-style="{ backgroundColor: '#cdcdcd'}">
           <q-list>
             <q-item clickable v-close-popup @click="() => onLangClick('pt-BR')">
@@ -86,6 +86,7 @@ const layout = computed(() => {
     profile: 'justify-center row q-col-gutter-lg',
     profile_card: 'col-2 bg-grey-10 text-grey-4 q-mt-lg',
     width: 'height: max-content; border-radius: 16px',
+
   }
 
 })

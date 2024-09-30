@@ -29,23 +29,11 @@ class ProfileService {
     ).then((r) => r.data.certificates)
   }
 
-//   async getRepos(): Promise<any>{
-//     return axiosConnection.get(
-//       make_url(PORTIFOLIO_API.API_GITHUB_USER, PORTIFOLIO_API.API_GITHUB_REPOS)
-//     ).then((r) => r.data)
-//   }
-//   async getRepoOnly(full_name: string): Promise<any>{
-//     return axiosConnection.get(
-//       make_url(PORTIFOLIO_API.API_GITHUB_REPOS, full_name)
-//     ).then((r) => r.data)
-//   }
-
-//   async getRepoContent(full_name: string, key: string): Promise<any>{
-//     return axiosConnection.get(
-//       make_url(PORTIFOLIO_API.API_GITHUB_REPOS, full_name, PORTIFOLIO_API.API_GITHUB_REPO_IMG, '.github'),
-//       {params: {key}}
-//     ).then((r) => r.data)
-//   }
+  async getCarrer(lang: string): Promise<any>{
+    return axiosConnection.get(
+      make_url(PORTIFOLIO_API.BASE_SERVICE, PORTIFOLIO_API.API_CARRER), { params: {lang}}
+    ).then((r) => r.data.carrer)
+  }
 }
 
 export default new ProfileService();
